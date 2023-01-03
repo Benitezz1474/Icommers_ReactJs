@@ -1,0 +1,114 @@
+
+html{
+    font-size: 10px;
+}
+
+section{
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.gameCover{
+
+    transition: all 0.4s;
+    width: 100%;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(100px, 320px));
+    grid-template-rows: 200px;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 2px 2px 5px 0 rgba(88, 87, 87, 0.629);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.gameCover:hover{
+    transition: all 0.4s;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.gameCover div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+.gameCover div img{
+    width: 70%;
+    object-fit: cover;
+
+    display: block;
+}
+
+
+@media screen and (min-width: 700px) {
+    
+    html{
+        font-size: 15px;
+    }
+
+    section{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(300px, 400px));
+        justify-items: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .gameCover{
+      width: 100%;
+    }
+
+    .gameCover div img{
+        width: 90%;
+        height: 100%;
+    }
+}
+
+
+@media screen and (min-width: 1100px) {
+    
+    html{
+        font-size: 16px;
+    }
+
+    section{
+        padding: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        justify-items: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .gameCover div img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+@media screen and (width > 1200px) {
+    
+    section{
+        padding: 50px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(200px, 1fr));
+        justify-items: center;
+        align-items: center;
+        gap: 50px;
+}
+.gameCover div img{
+    width: 100%;
+    height: 100%;
+}
+}

@@ -1,0 +1,170 @@
+
+a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.fullGame{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+.fullGame div{
+    margin: 10px 0 20px 0;
+}
+
+.fullGame div img{
+    width: 100%;
+}
+
+.fullGame nav ul {
+    width: 100%;
+    height: auto;
+    padding: 10px 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.fullGame nav ul h1{
+    text-align: center;
+}
+
+.fullGame nav ul h3{
+    font-size: 25px;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.fullGame nav ul li{
+    font-size: 20px;
+    margin:  2px;
+    padding: 3px 0;
+}
+
+.fullGame main{
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;padding: 20px 5px;
+}
+
+.fullGame a{
+    display: block;
+    text-align: center;
+}
+
+.fullGame main button{
+    margin: 0 10px;
+}
+
+.fullDescription{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.692);
+}
+
+.image1{
+    width: 100%;
+    max-width: 250px;
+}
+
+.category{
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    /* height: 700px; */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(300px, 1fr));
+    gap: 10px;
+
+}
+
+
+.section{
+    width: 100%;
+    height: 100%;
+    /* background-color: black; */
+    display: grid;
+    grid-template-rows: repeat(2, minmax(100px, 233px));
+    gap: 10px;
+
+}
+
+.section a {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* border: 1px solid rgb(154, 198, 220); */
+    border: 3px solid rgba(106, 198, 224, 0.516);
+    box-shadow: 5px 5px 10px 0 rgba(106, 198, 224, 0.516);
+    border-radius: 5px;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.section a:hover{
+    transition: all 0.3s;
+    cursor: pointer;
+    transform: translateX(20px);
+}
+
+.section img{
+    width: 100%;
+    max-width: 200px;
+}
+
+
+.view{
+    /* border: 3px solid rgba(106, 198, 224, 0.516); */
+    box-shadow: 5px 5px 10px 0 rgba(106, 198, 224, 0.516);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view img {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+@media screen and (min-width: 1020px) {
+    
+    .fullGame{
+        width: 100%;
+        min-width: 100%;
+       
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fullGame div{
+        margin: 0 50px;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    
+   .fullGame main{
+    flex-direction: column;
+   }
+
+   .fullGame main button{
+    margin: 15px 0;
+    font-size: 16px;
+   }
+}
+
+
+
