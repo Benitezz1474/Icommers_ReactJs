@@ -25,7 +25,7 @@ export const NavBar=()=>{
                 <li onClick={handleNavOff}> <NavLink to = "/store" className = {({isActive})=> isActive ? "active" : "" }> Store </NavLink> </li>
                 <li onClick={handleNavOff}> <NavLink to = "/sale" className = {({isActive})=> isActive ? "active" : "" }> Sale </NavLink> </li>
             </ul>
-            <button onClick={handleNavOff} className = "btn_menu" > <img src="/public/menu.png" alt="" /> </button>
+            <button onClick={handleNavOff} className = "btn_menu" > <img src="/menu.png" alt="" /> </button>
         </nav>
     </header>
 }

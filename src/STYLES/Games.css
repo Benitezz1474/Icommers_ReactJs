@@ -9,6 +9,8 @@ section{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: linear-gradient(90deg,rgb(2, 46, 118), white);
+
 }
 
 .gameCover{
@@ -25,6 +27,8 @@ section{
     align-items: center;
     justify-content: center;
     overflow: hidden;
+
+    background-color: #fff;
 
 }
 

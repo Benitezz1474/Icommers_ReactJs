@@ -2,20 +2,21 @@
 import { Route, Routes } from "react-router-dom";
 
 //Components
-import { GameCover, GameFilter } from "./index";
-import {games} from "../DATA/games.js"
+import { GameCover,} from "./index";
+import {games} from "../../DATA/games.js"
 //Styles
-import "../STYLES/Games.css";
+import "../../STYLES/Games.css";
+import { useState } from "react";
 
 export const Games=()=>{
 
+
     
     return<>
-          <GameFilter />
      <section>
         {
             games.map(game => {
-                return <GameCover data = {game} />
+                return <GameCover data = {game} key = {game.id} />
             })
         }
     </section>

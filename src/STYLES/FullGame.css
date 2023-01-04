@@ -1,4 +1,8 @@
 
+/* body{
+    background: linear-gradient(45deg, #adb5bd, #ffffff00);
+} */
+
 a{
     display: block;
     width: 100%;
@@ -7,17 +11,27 @@ a{
 
 .fullGame{
     width: 100%;
-    max-width: 500px;
+    /* max-width: 500px; */
     margin: 0 auto;
+    background-color: rgb(29, 29, 29);
 }
 
+
+.fullGame div:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .fullGame div{
     margin: 10px 0 20px 0;
 }
 
+
 .fullGame div img{
     width: 100%;
+    max-width: 300px;
+
 }
 
 .fullGame nav ul {
@@ -33,18 +47,21 @@ a{
 
 .fullGame nav ul h1{
     text-align: center;
+    color: #fff;
 }
 
 .fullGame nav ul h3{
     font-size: 25px;
     margin: 5px 0;
     text-align: center;
+    color: #fff;
 }
 
 .fullGame nav ul li{
     font-size: 20px;
     margin:  2px;
     padding: 3px 0;
+    color: #fff;
 }
 
 .fullGame main{
@@ -89,33 +106,66 @@ a{
 }
 
 
+
 .section{
     width: 100%;
     height: 100%;
     /* background-color: black; */
-    display: grid;
+    /* display: grid;
     grid-template-rows: repeat(2, minmax(100px, 233px));
-    gap: 10px;
+    gap: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    
+}
 
+.section div{
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
 }
 
 .section a {
+    
+    margin: 20px 0;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     /* border: 1px solid rgb(154, 198, 220); */
-    border: 3px solid rgba(106, 198, 224, 0.516);
-    box-shadow: 5px 5px 10px 0 rgba(106, 198, 224, 0.516);
+    /* border: 3px solid rgba(106, 198, 224, 0.516); */
+    /* box-shadow: 5px 5px 10px 0 rgba(106, 198, 224, 0.516); */
     border-radius: 5px;
-    transition: all 0.3s;
+    transition: all 0.5s;
     overflow: hidden;
+    /* background-color: rgb(236, 235, 235); */
+    /* background: rgba(255, 255, 255, 0.311);
+     */
+     background: linear-gradient(90deg,rgb(75, 75, 75),white);
+     border: 1px solid rgb(182, 180, 180);
+     
+    }
+
+    /* .section div:last-child{
+        background: red;
+    } */
+    .bluRay a img{
+    
+    transition: all 0.3s;
+}
+
+.bluRay:hover a img{
+
+    transform: rotate(-75deg);
 }
 
 .section a:hover{
-    transition: all 0.3s;
+    transition: all 0.5s;
     cursor: pointer;
     transform: translateX(20px);
+    background: linear-gradient(90deg,gray,white);
 }
 
 .section img{
@@ -126,7 +176,7 @@ a{
 
 .view{
     /* border: 3px solid rgba(106, 198, 224, 0.516); */
-    box-shadow: 5px 5px 10px 0 rgba(106, 198, 224, 0.516);
+    /* box-shadow: 5px 5px 10px 0 rgba(106, 198, 224, 0.516); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,6 +186,27 @@ a{
     width: 100%;
     max-width: 500px;
     padding: 20px;
+}
+
+.about{
+    width: 100%;
+    height: 400px;
+    /* background-color: rgb(147, 145, 145); */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 400px));
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.about div{
+    border: 1px solid red;
+    margin: 0 20px;
+}
+
+.about div:first-child{
+    /* background-image: linear-gradient(350deg, #daffb7 0, #dfffa7 7.14%, #e4f996 14.29%, #e8ef85 21.43%, #ebe373 28.57%, #eed561 35.71%, #f0c64e 42.86%, #f2b53c 50%, #f4a32c
+     57.14%, #f69221 64.29%, #f8801d 71.43%, #fb6d20 78.57%, #fe5a27 85.71%, #ff4431 92.86%, #ff293d 100%); */
 }
 
 @media screen and (min-width: 1020px) {
@@ -152,6 +223,11 @@ a{
     .fullGame div{
         margin: 0 50px;
     }
+    .fullGame div img{
+        width: 100%;
+        max-width: none;
+    
+    }
 }
 
 @media screen and (max-width: 699px) {
@@ -161,8 +237,24 @@ a{
    }
 
    .fullGame main button{
-    margin: 15px 0;
-    font-size: 16px;
+    margin: 10px 0;
+    font-size: 24px;
+   }
+
+   .category{
+    grid-template-columns: 1fr;
+   }
+
+   .view{
+    display: none;
+   }
+
+   .section div{
+    margin: 10px 0;
+   }
+
+   .section a:hover{
+    transform: none;
    }
 }
 

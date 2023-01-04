@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import { Link, Route, Routes, useParams } from "react-router-dom"
-import { games } from "../DATA/games"
+import { games } from "../../DATA/games"
 
-import "../STYLES/FullGame.css"
-import { FullPicture } from "./FullPicture";
+import "../../STYLES/FullGame.css"
+import { FullPicture,ContactForm } from "./index";
 export const FullGame=()=>{
   
    const [firstImage, setFirstImage] = useState(true)
@@ -22,13 +22,11 @@ export const FullGame=()=>{
 
     const {pic1, pic2, pic3} = pictures
 
-    console.log(pic1,pic2)
-
 
     return <>
     <div className="fullGame">
         <div>
-        <img src={`/public/assets/gameCover/${image}.jpg`} alt="" />
+        <img src={`/assets/gameCover/${image}.png`} alt="" />
         </div>
         <div>
             <nav>
@@ -42,8 +40,8 @@ export const FullGame=()=>{
             </nav>
 
             <main>
-            <Link ><button className="btn btn-success" >COMPRAR</button></Link>
-            <Link to = "/games"><button className="btn btn-primary" >VOVLER</button></Link>
+               <Link ><button className="btn btn-success" >TO BUY</button></Link>
+               <Link to = "/games"><button className="btn btn-primary" > Back Page</button></Link>
             </main>
         </div>
     </div>
@@ -51,15 +49,15 @@ export const FullGame=()=>{
 
  <div className="category">
   <div className="section">
-    <div>
-    <Link to = {pic1}>
-      <img src={`/assets/fullGame/${pic1}.jpg`} alt="" />
+    <div className="bluRay" >
+    <Link to = {pic1} >
+      <img src={`/assets/fullGame/${pic1}.png`} alt="" />
     </Link>
     </div>
     
     <div>
     <Link to = {pic2}>
-      <img src={`/assets/fullGame/${pic2}.jpg`} alt="" />
+      <img src={`/assets/fullGame/${pic2}.png`} alt="" />
     </Link>
     </div>
     {/* <div>
@@ -72,12 +70,15 @@ export const FullGame=()=>{
     </Routes>
 
     {
-      firstImage && <img src={`/assets/fullGame/${pic1}.jpg`} alt="" />
+      firstImage && <img src={`/assets/fullGame/${pic1}.png`} alt="" />
 
     }
   </div>
+
  </div>
 
+ 
+ <ContactForm />
 
     </>
 

@@ -1,5 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom"
-import { Games } from "./Games"
+import { Games } from "./GAME/Games"
 
 export const Home=()=>{
     return <>
