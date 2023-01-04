@@ -13,7 +13,7 @@ return <>
   <NavBar />
 
   <Routes>
-    <Route path = "/" element = {<Navigate to = "/home"/>} />
+    <Route path = "/" element = {<Navigate to = "/games"/> } />
 
     <Route path='/home/*' element = {<Home />} />
     

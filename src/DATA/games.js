@@ -79,5 +79,49 @@ export const games = [
             pic2: "horizonZD_p2",
             // pic3: "https://alfabetajuega.com/hero/2021/04/the-evil-within-2.jpg?width=1200"
         }
+    },
+    {
+        id: 7,
+        name : "FIFA 23",
+        description : "Soccer",
+        image : "fifa23",
+        price :"70.00 USD",
+        gender: "Sport",
+        pictures:{
+            pic1: "fifa23_p1",
+            pic2: "fifa23_p2",
+            // pic3: "https://alfabetajuega.com/hero/2021/04/the-evil-within-2.jpg?width=1200"
+        }
+    },
+
+    {
+        id: 8,
+        name : "Ciberpuk",
+        description : "Ciborg city, robots and zero human",
+        image : "ciberpunk",
+        price :"34.00 USD",
+        gender: "Adventure",
+        pictures:{
+            pic1: "ciberpunk_p1",
+            pic2: "ciberpunk_p2",
+            // pic3: "https://alfabetajuega.com/hero/2021/04/the-evil-within-2.jpg?width=1200"
+        }
+    },
+
+    {
+        id: 9,
+        name : "Spider Man",
+        description : "The amazin spiderman of MARVEL COMICS!",
+        image : "spiderman",
+        price :"68.00 USD",
+        gender: "Adventure",
+        pictures:{
+            pic1: "spiderman_p1",
+            pic2: "spiderman_p2",
+            // pic3: "https://alfabetajuega.com/hero/2021/04/the-evil-within-2.jpg?width=1200"
+        }
     }
+
+
+    
 ]

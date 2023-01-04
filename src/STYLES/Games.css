@@ -4,12 +4,14 @@ html{
 }
 
 section{
+    margin: 20px 0 0 0;
     padding: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(90deg,rgb(2, 46, 118), white);
+    /* background: linear-gradient(90deg,rgb(2, 46, 118), white); */
+    background: rgba(13, 94, 138, 0.75);
 
 }
 
