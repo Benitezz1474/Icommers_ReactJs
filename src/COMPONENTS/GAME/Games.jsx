@@ -6,20 +6,25 @@ import { GameCover,} from "./index";
 import {games} from "../../DATA/games.js"
 //Styles
 import "../../STYLES/Games.css";
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
+import { dataContext } from "../../HOOKS/gameContext";
+
+
+
 
 export const Games=()=>{
+    return <>
 
 
-    
-    return<>
-     <section>
+        <section>
         {
             games.map(game => {
                 return <GameCover data = {game} key = {game.id} />
             })
         }
-    </section>
+        </section>
 
         </>
+        
+
 }

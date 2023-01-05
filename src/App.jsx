@@ -4,12 +4,15 @@ import { Games } from './COMPONENTS/GAME/index'
 import { Home } from './COMPONENTS/Home.jsx'
 
 import {NavBar} from "./COMPONENTS/NavBar.jsx" 
+import { dataContext,GameContext } from "./HOOKS/gameContext";
 
 import "./STYLES/NavBar.css"
 
 function App() {
 
-return <>
+return <GameContext>
+
+
   <NavBar />
 
   <Routes>
@@ -23,7 +26,8 @@ return <>
 
   </Routes>
 
-</>
+</GameContext>
+
 }
 
 export default App

@@ -82,7 +82,7 @@ header nav ul li{
 .navOn{
     padding: 0;
     border-right: 5px solid orange;
-    width: 0%;
+    width: 0;
     height: auto;
     transition: all 0.3s;
 }
@@ -109,6 +109,7 @@ header nav ul li{
         flex-direction: row;
         border: none;
         background: transparent;
+        transition: none;
         
     }
 

@@ -1,11 +1,18 @@
-import { useRef, useState } from "react";
+import { useContext, useLayoutEffect, useRef, useState } from "react";
 import { Link, Route, Routes, useParams } from "react-router-dom"
 import { games } from "../../DATA/games"
 
 import "../../STYLES/FullGame.css"
-import { FullPicture,ContactForm } from "./index";
+import { FullPicture,ContactForm} from "./index";
+import 'animate.css';
+import { dataContext } from "../../HOOKS/gameContext";
+
+
 export const FullGame=()=>{
   
+
+
+
    const [firstImage, setFirstImage] = useState(true)
 
    const onFirsImage=()=>{
@@ -26,7 +33,7 @@ export const FullGame=()=>{
     return <>
     <div className="fullGame">
         <div>
-        <img src={`/assets/gameCover/${image}.png`} alt="" />
+        <img src={`/assets/gameCover/${image}.png`} alt="" className="animate__animated animate__pulse" />
         </div>
         <div>
             <nav>

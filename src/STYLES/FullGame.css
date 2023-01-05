@@ -13,6 +13,7 @@ a{
     width: 100%;
     /* max-width: 500px; */
     margin: 0 auto;
+    padding: 100px 10px;
     background-color: rgb(29, 29, 29);
 }
 
@@ -70,7 +71,8 @@ a{
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    align-items: center;padding: 20px 5px;
+    align-items: center;
+    padding: 20px 5px;
 }
 
 .fullGame a{
