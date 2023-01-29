@@ -5,9 +5,9 @@ export const dataContext = createContext();
 
 export const GameContext = ({children})=>{
 
-    const {removeAlert} = useForm()
+    // const {removeAlert} = useForm()
 
-    return <dataContext.Provider value={{removeAlert}}>
+    return <dataContext.Provider value={"undefined"}>
         {children}
     </dataContext.Provider>
 

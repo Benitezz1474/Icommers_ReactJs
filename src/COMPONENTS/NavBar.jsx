@@ -1,81 +1,79 @@
 //React
-import { useState } from "react";
-import { Form, NavLink } from "react-router-dom"
+import { useEffect } from "react";
+import { useContext, useLayoutEffect, useState } from "react";
+import { Form, Link, NavLink } from "react-router-dom"
+import { authContext } from "../CONTEXT";
+import {LogoutConfirm} from "./index"
 
 //Components
-
 import { useForm } from "../HOOKS/useForm";
 
 //Styles
 import "../STYLES/NavBar.css";
-import styled from "styled-components";
-import { GameSearch } from "./GAME/GameSearch";
 
 export const NavBar=()=>{
 
 
-    const [navOff, setNavOff] = useState(false);
+const [logoutConfirm, setLogoutConfirm] = useState(false);
 
-    const handleNavOff=()=>{
-        setNavOff(!navOff);
+
+    return  <>
+    
+    <nav className="navbar navbar-dark bg-dark fixed-top">
+  <div className="container-fluid" style={{flexWrap:"nowrap"}}>
+    <Link className="navbar-brand" to = "#">My Library PS4</Link>
+    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="offcanvas offcanvas-end text-bg-dark" tabIndex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div className="offcanvas-header">
+        <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+        <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div className="offcanvas-body">
+        <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li className="nav-item">
+            <Link className="nav-link active" aria-current="page" to = "/home">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to = "/games">Games</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to = "/store">Store</Link>
+          </li>
+          <li className="nav-item dropdown">
+            <Link className="nav-link dropdown-toggle" to = "#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More Settings
+            </Link>
+            <ul className="dropdown-menu dropdown-menu-dark">
+              <li><Link className="dropdown-item" to = "/userConfig">User Config</Link></li>
+              <li>
+                <hr className="dropdown-divider" />
+              </li>
+              {/* <li onClick={()=>setLogoutConfirm(true)} > SigOut </li> */}
+              <button className="btn btn-danger mx-2" onClick={()=>{ setLogoutConfirm(true) }} >SigOut</button>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+{/* Logout Alert Confirm */}
+
+    {
+      logoutConfirm && <LogoutConfirm confirm = {logoutConfirm} setLogoutConfirm = {setLogoutConfirm} />
     }
 
-    const {handleForm,handleInputChange,handleTextArea,searchView,inputValue,gameSearch} = useForm()
-
-    return <>
-    <header>
-
-        <nav>
-            <h2>LogoPro</h2>
-
-            <ul className={navOff ? "navOff" : "navOn"} >
-
-            {/* De esta forma a continuacion, cuando se le da click a los links en mobile, no tienen que volver a darle en menu. Pero causa
-            
-                colisionamiento o detalles no deseados en desktop device */}
-
-            {/* <li  onClick={handleNavOff} ><NavLink to = "/games" className = {({isActive})=> isActive ? "active" : "" }> Games </NavLink> </li>  */}
-
-                 <li ><NavLink to = "/games" className = {({isActive})=> isActive ? "active" : "" }> Games </NavLink> </li> 
-                 <li ><NavLink to = "/store" className = {({isActive})=> isActive ? "active" : "" }> Store </NavLink> </li> 
-                 <li ><NavLink to = "/sale" className = {({isActive})=> isActive ? "active" : "" }> Sale </NavLink> </li>
-            </ul>
-            <button onClick={handleNavOff} className = "btn_menu" > <img src="/menu.png" alt="" /> </button>
-        </nav>
-    </header>
-        <FormNavBar>
-           <InputFormNavBar type="text" placeholder="Search" onChange={handleInputChange} />
-           <input type="submit" value="Search" className="btn btn-primary" onClick={handleForm} />
-           
-        </FormNavBar>
-
-          <GameSearch view = {searchView} changeView = {handleTextArea} inputValue = {inputValue} game = {gameSearch} />
     </>
+    
+      
+    
 }
 
-const FormNavBar = styled.form`
-
-width: 100%;
-border-radius:5px;
-margin:20px auto;
-max-width:1000px;
-padding:20px;
-background-color:rgba(200,200,200,0.5);
-display: flex;
-justify-content: space-around;
-align-items: center;
-`;
-
-const InputFormNavBar = styled.input`
-
-width: 50%;
-padding:20px;
-background-color:#fff;
-
-border:none;
-outline:none;
-box-shadow: 5px 5px 10px 0 rgba(100,100,100,0.6);
-border-radius:5px;
-
-`
 

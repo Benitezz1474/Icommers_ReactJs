@@ -10,9 +10,6 @@ import { dataContext } from "../../HOOKS/gameContext";
 
 export const FullGame=()=>{
   
-
-
-
    const [firstImage, setFirstImage] = useState(true)
 
    const onFirsImage=()=>{

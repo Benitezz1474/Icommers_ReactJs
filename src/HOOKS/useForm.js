@@ -1,33 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { games } from "../DATA/games";
 
 export const useForm = () =>{
-    const navigate = useNavigate();
-    const location = useLocation();
 
+    const navigate = useNavigate();
+    
     const [inputValue, setInputValue] = useState("");
     const [searchView, setSearchView] = useState(false)
-    // const [gameSearch, setGameSearch] = useState(0);
-
-
-  
-    const removeAlert=()=>{
-        setSearchView(false);
-        console.log(searchView)
-    }
-
-
-
+    
     //FORM
 
     const handleForm=(e)=>{
-        e.preventDefault();
 
-        console.log(location)
+        e.preventDefault();
         
-        if(inputValue.length <= 1) return
-        setSearchView(!searchView)
+        if(inputValue.length <= 1){
+            return
+        } 
+
+        setSearchView(true)
 
         navigate(`/games?q=${inputValue}`)
 
@@ -37,10 +29,6 @@ export const useForm = () =>{
         
         setInputValue(e.target.value);
         
-        // games.map(game => {
-        //     if(game.name.toLowerCase().includes(inputValue)) setGameSearch(game.name);
-        // });
-
     }
 
 
@@ -48,10 +36,8 @@ export const useForm = () =>{
 
         handleForm,
         handleInputChange,
-        // handleTextArea,
         searchView,
-        // gameSearch,
-        removeAlert,
+        setSearchView,
         inputValue
     }
 }

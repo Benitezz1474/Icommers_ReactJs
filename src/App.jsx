@@ -1,32 +1,47 @@
 import { Routes,Route,Navigate } from 'react-router-dom'
-import { FullGame } from './COMPONENTS/GAME/FullGame'
-import { Games } from './COMPONENTS/GAME/index'
-import { Home } from './COMPONENTS/Home.jsx'
-
-import {NavBar} from "./COMPONENTS/NavBar.jsx" 
-import { dataContext,GameContext } from "./HOOKS/gameContext";
+import { Login, Register } from './COMPONENTS/LOG'
+import { Logout, PrivateRoute, PublicRoute } from './CONTEXT/index.js'
+import { PrincipalRouter } from './Routers/PrincipalRouter'
 
 import "./STYLES/NavBar.css"
 
 function App() {
 
-return <GameContext>
+return <>
 
-
-  <NavBar />
 
   <Routes>
-    <Route path = "/" element = {<Navigate to = "/games"/> } />
-
-    <Route path='/home/*' element = {<Home />} />
     
-    <Route path='/games/*' element = {<Games />} />
+    <Route path = "/" element = {<Navigate to = "/login"/> } />
 
-    <Route path='/fullGame/:id/*' element = {<FullGame />} />
+    <Route path = "/login" element = {
+      <PublicRoute>
+        <Login /> 
+      </PublicRoute>
+    }/>
+
+   <Route path = "/register" element = {
+      <PublicRoute>
+        {/* aqui va el componente  <Rgister />  */}
+        <Register />
+      </PublicRoute>
+    }/>
+
+    
+    <Route path = "/logout" element = {<Logout />} />
+
+
+    <Route path = "/*" element = {<PrivateRoute >
+
+   <PrincipalRouter />
+
+    </PrivateRoute>} />
 
   </Routes>
 
-</GameContext>
+
+    {/* Footer */}
+</>
 
 }
 
