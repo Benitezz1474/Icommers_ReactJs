@@ -1,18 +1,21 @@
 import { authContext } from "../../CONTEXT";
 import { firebaseLogin } from "../../Firebase/firebaseLogin";
+import { ContentForm,Form,Input,InputSubmit } from "../../Layout/Form";
 
 
 export const Login=()=>{
 
     const {handleForm,handleInputForm,inputsLogin} = firebaseLogin();
     
-    return <>
-    <form onSubmit={handleForm}>
-        <input type="email" name="email" value = {inputsLogin.email}  onChange = {handleInputForm} /> <br />
-        <input type="password" name = "password" value = {inputsLogin.password}  onChange = {handleInputForm} /> <br />
-        <input type="submit" value="Login" />
-    </form>
+    return <ContentForm>
+    <Form onSubmit={handleForm}>
+        <Input type="email" name="email" value = {inputsLogin.email} placeholder = "Your Email" onChange = {handleInputForm} /> <br />
+        <Input type="password" name = "password" value = {inputsLogin.password} placeholder = "Your Password" onChange = {handleInputForm} /> <br />
+        <InputSubmit type="submit" value="Login" />
+    </Form>
 
-    </>
+    </ContentForm>
 }
+
+
 

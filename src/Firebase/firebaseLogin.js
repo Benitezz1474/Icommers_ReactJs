@@ -10,7 +10,7 @@ export const firebaseLogin=()=>{
     const navigate = useNavigate();
 
     const [inputsLogin, setInputsLogin] = useState({
-        email : "Example@something.com",
+        email : "",
         password : ""
     })
 
