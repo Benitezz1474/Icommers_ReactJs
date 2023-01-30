@@ -5,9 +5,8 @@ export const ContentForm = styled.div`
 
 width: 100vw;
 height: 100vh;
-background: rgb(255,0,0);
-background: linear-gradient(152deg, rgba(255,0,0,0.923406862745098) 0%, rgba(173,0,255,1) 51%, rgba(255,0,179,1) 99%);
-display: flex;
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);display: flex;
 align-items: center;
 justify-content: center;
 
