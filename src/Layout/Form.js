@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 
+
 export const ContentForm = styled.div`
 
 width: 100vw;
@@ -9,6 +10,7 @@ background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);display: flex;
 align-items: center;
 justify-content: center;
+flex-direction: column;
 
 
 `
@@ -16,7 +18,7 @@ justify-content: center;
 
 export const Form = styled.form`
 
-width: 100%;
+width: 80%;
 max-width: 500px;
 display: flex;
 align-items: center;
@@ -29,6 +31,7 @@ border-radius:20px;
 background-color: #fff;
 
 `
+
 
 
 export const Input = styled.input`

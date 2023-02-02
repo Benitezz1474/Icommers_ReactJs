@@ -3,11 +3,14 @@ import { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom";
 import { authContext } from "../CONTEXT";
 import { auth } from "./firebase";
+import { firebaseErrors } from "./firebaseErrors";
 
 export const firebaseLogin=()=>{
 
+    const [errors, setErrors] = useState()
 
     const navigate = useNavigate();
+    const [load, setLoad] = useState(false)
 
     const [inputsLogin, setInputsLogin] = useState({
         email : "",
@@ -18,21 +21,32 @@ export const firebaseLogin=()=>{
 
         e.preventDefault();
 
+        setLoad(true)
+
         const {email, password} = inputsLogin
 
 
+        //con esta funcion de firebase creo un user a partir de un email y una constraseña
+        
         signInWithEmailAndPassword(auth,email,password)
 
-        .then((useCredential)=>{
-           
-
+        .then(()=>{
 
             navigate("/home")
         })
 
         .catch((error)=>{
-           console.log(error.message)
+
+        //la funcion firebaseErrros retorna un error a partir del codigo
+        //y luego lo almaceno en el estado errors con setErrors para luego pasarselos al <Login />
+         
+        const formError =  firebaseErrors(error.code)
+
+         setErrors(formError)
+
         })
+
+        .finally(()=> setLoad(false))
 
 
     }
@@ -48,7 +62,9 @@ export const firebaseLogin=()=>{
     return{
         inputsLogin,
         handleForm,
-        handleInputForm
+        handleInputForm,
+        load,
+        errors
     }
    
 }
