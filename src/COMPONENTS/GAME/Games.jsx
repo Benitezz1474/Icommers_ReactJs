@@ -4,20 +4,26 @@ import styled from "styled-components";
 
 //Components
 import { GameCover,} from "./index";
-import {games} from "../../DATA/games.js"
+import {games as gamesLocal} from "../../DATA/games.js"
 //Styles
 import "../../STYLES/Games.css";
 import { createContext, useContext, useState } from "react";
 import { dataContext } from "../../HOOKS/gameContext";
 import { useForm } from "../../HOOKS/useForm";
 import { GameSearch } from "./GameSearch";
-
+import { firebaseGame } from "../../Firebase/firebaseGames";
+import { SpinnerGames } from "./SpinnerGames";
 
 
 
 export const Games=()=>{
     const {handleForm,handleInputChange,searchView,setSearchView} = useForm()
-    return <>
+
+    //FirebaseGame
+    const {games,load} = firebaseGame()
+
+
+ if(load)  return <>
 
   <FormNavBar>
            <InputFormNavBar type="text" placeholder="Search" onChange={handleInputChange} />
@@ -27,6 +33,8 @@ export const Games=()=>{
 
           <GameSearch view = {searchView} chageView = {setSearchView} />
 
+
+        {/* Games! */}
         <section>
         {
             games.map(game => {
@@ -36,7 +44,9 @@ export const Games=()=>{
         </section>
 
         </>
-        
+
+
+else return <SpinnerGames text="Loading..." />
 
 }
 
