@@ -10,7 +10,6 @@ export const games = [
         pictures:{
             pic1: "theEvilWithin_p1",
             pic2: "theEvilWithin_p2",
-            // pic3: "https://cdn.akamai.steamstatic.com/steam/apps/268050/ss_fa65fd3c1d5ee8dedf67f0ad1b2df828c33ecc99.1920x1080.jpg?t=1572026108"
         }
     },
 

@@ -8,8 +8,6 @@ export const firebaseGame=()=>{
     const [games, setGames] = useState(false);
     const [load, setLoad] = useState(false)
 
-    console.log("me renderizo")
-
   useEffect(()=>{
    
     onSnapshot(
@@ -33,8 +31,6 @@ export const firebaseGame=()=>{
     )
     
   },[])
-
-  console.log(games)
 
 
     return{

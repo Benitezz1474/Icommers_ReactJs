@@ -1,14 +1,11 @@
 //React
-import { Route, Routes } from "react-router-dom";
+
+//Styles
 import styled from "styled-components";
+import "../../STYLES/Games.css";
 
 //Components
 import { GameCover,} from "./index";
-import {games as gamesLocal} from "../../DATA/games.js"
-//Styles
-import "../../STYLES/Games.css";
-import { createContext, useContext, useState } from "react";
-import { dataContext } from "../../HOOKS/gameContext";
 import { useForm } from "../../HOOKS/useForm";
 import { GameSearch } from "./GameSearch";
 import { firebaseGame } from "../../Firebase/firebaseGames";
@@ -23,6 +20,8 @@ export const Games=()=>{
     const {games,load} = firebaseGame()
 
 
+    //if loasd == true, so return everithing 
+
  if(load)  return <>
 
   <FormNavBar>
@@ -31,7 +30,7 @@ export const Games=()=>{
            
         </FormNavBar>
 
-          <GameSearch view = {searchView} chageView = {setSearchView} />
+          <GameSearch view = {searchView} chageView = {setSearchView} game = {games} />
 
 
         {/* Games! */}
@@ -45,6 +44,7 @@ export const Games=()=>{
 
         </>
 
+//if load !== true so return Snipper for to show loading message
 
 else return <SpinnerGames text="Loading..." />
 

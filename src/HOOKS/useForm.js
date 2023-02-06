@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { games } from "../DATA/games";
+import {firebaseGame} from "../Firebase/firebaseGames"
 
 export const useForm = () =>{
+
+    const {load, games} = firebaseGame();
 
     const navigate = useNavigate();
     

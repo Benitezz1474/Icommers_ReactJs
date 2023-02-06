@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
-import {firebaseGetImgs} from "../../Firebase/firebaseGetImgs"
 import 'animate.css';
-import { useEffect } from "react";
 
 export const GameCover=({data})=>{
-    
-      
-
-
     
 
     return <Link to = {`/fullGame/${data.id}`} className = "animate__animated animate__bounce" >
