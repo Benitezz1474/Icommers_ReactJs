@@ -80,10 +80,14 @@ export const FullGame=()=>{
       <img src={`/assets/fullGame/${pic3}`} alt="" />
     </div> */}
   </div>
+  
   <div className="view">
-    <Routes>
+    
+    
+    
+    {/* <Routes>
       <Route path=":image" element= {<FullPicture setFirstImage = {onFirsImage} />} />
-    </Routes>
+    </Routes> */}
 
     {/* Esta porcion de codigo se encarga de poner una imagen SOLAMENTE la primera vez que se renderiza el componente */}
     {
