@@ -1,10 +1,14 @@
 
 import { useState } from "react"
 import styled from "styled-components"
+import {useFormContact} from "../../HOOKS/useFormContact"
+import {MaxChatacters,SendSuccesForm} from "./index"
 
 export const ContactForm=()=>{
   
-    const [show, setShow] = useState(true);
+    const {handleForm,handleInputChange,inputContact,alertCharacters,sendSuccess,maxCharacter,} = useFormContact()
+
+    // const [show, setShow] = useState(true);
   
   return <>
 
@@ -15,23 +19,29 @@ export const ContactForm=()=>{
 
     <FormGuie >
           <FormText> Guide For To Do Questions </FormText>
-          <FormGuie_item>No se responden preguntas o críticas con insultos </FormGuie_item>
-          <FormGuie_item>No se responden preguntas evidentes </FormGuie_item>
-          <FormGuie_item>No se responden preguntas maliciosas  </FormGuie_item>
+          <FormGuie_item>We dont response evil questions </FormGuie_item>
 
     </FormGuie>
 
-    <FormContent>
+    <FormContent onSubmit={handleForm}>
         <FormText> Do You Have  A Question?</FormText>
-        <FormInput type="text" name="userName"  placeholder="UserName" />
-        <FormInput type="email" name="email" placeholder="Email" />
-          <FormTextArea name="" id="" cols="30" rows="10" placeholder = "You Tell Ous"  />
-          <input type="submit" value="Send" className="btn btn-primary" />
+        <FormInput type="text" name="user" placeholder="Your userName" value = {inputContact.user} onChange={handleInputChange}  />
+        <FormInput type="email" name="email" placeholder="Your email" value = {inputContact.email} onChange={handleInputChange} />
+          <FormTextArea name="data" id="" cols="30" rows="10" placeholder="Your question or data info for we" value = {inputContact.data}  onChange={handleInputChange}  />
+          <input type="submit" value="Send" className="btn btn-primary" disabled = {alertCharacters} />
     </FormContent>
   </Content>
+  
+   {
+    sendSuccess && <SendSuccesForm />
+   }
+
+   <MaxChatacters maxChatacters={maxCharacter} alertCharacters = {alertCharacters} />
+
+  
 
 </Box>
-   {/* <ButtonCancel  show = {show} onClick={()=>{setShow(!show)}} > Cancelar Todo </ButtonCancel> */}
+
     </>
 }
 
@@ -39,7 +49,7 @@ const Box = styled.div`
 width:100%;
 padding: 20px;
 // background-color: red;
-background-color: #41403F;
+background-color: rgba(51,51,51,0.5);
 `;
 
 const Content = styled.div`
@@ -49,7 +59,7 @@ margin:0 auto;
 padding: 20px;
 display: flex;
 align-items:center;
-justify-contents: space-around;
+justify-content: space-around;
 flex-direction:column;
 
 @media screen and (min-width:700px){
@@ -109,7 +119,7 @@ padding: 5px;
 resize: none;
 
 
- }
+ 
 `
 
 const FormText = styled.h2`

@@ -99,13 +99,24 @@ a{
     width: 100%;
     max-width: 1200px;
     margin: 20px auto;
-    /* height: 700px; */
+    height: 700px;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(2,minmax(300px, 1fr));
     gap: 10px;
 
+    /* background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); */
+
 }
+
+/* .category div div{
+    box-shadow: -5px 5px 10px 0 black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+} */
+
 
 
 
@@ -123,11 +134,11 @@ a{
     
 }
 
-.section div{
+/* .section  div{
     width: 100%;
-    height: 100%;
+    height: auto;
     max-height: 200px;
-}
+} */
 
 .section a {
     
@@ -170,7 +181,26 @@ a{
     background: linear-gradient(90deg,gray,white);
 }
 
-.section img{
+.section div{
+    /* background-color: blue; */
+    width: 80%;
+    height: 45%;
+    transition: all 0.2s;
+    box-shadow: -5px 5px 15px 0 rgba(51, 51, 51, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    
+}
+
+.section div:hover{
+    transform: translateX(30px);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.section div img{
     width: 100%;
     max-width: 200px;
 }
@@ -182,6 +212,10 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 15px 0 rgba(51, 51, 51, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
 .view img {

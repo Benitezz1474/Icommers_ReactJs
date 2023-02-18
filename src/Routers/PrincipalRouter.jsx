@@ -13,7 +13,7 @@ export const PrincipalRouter=()=>{
     
 <NavBar />
 
-<div className='my-5 py-2'>
+<div className='mt-5 py-2'>
 
     
         
